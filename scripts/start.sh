@@ -1,9 +1,9 @@
 echo "Starting brscan-skey......."
 sleep 5
 echo "using the following environment variables:"
-
+env
 echo
-#/usr/bin/brsaneconfig4 -a name=$SCANNER_NAME model=$SCANNER_MODEL ip=$SCANNER_IP_ADDRESS
+/usr/bin/brsaneconfig4 -a name=$SCANNER_NAME model=$SCANNER_MODEL ip=$SCANNER_IP_ADDRESS
 /usr/bin/brscan-skey
 
 processId=$(ps -ef | grep 'brscan-skey' | grep -v 'grep' | awk '{ printf $2 }')
